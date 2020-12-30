@@ -12,7 +12,7 @@ platform :ios do
     name = options[:name]
     age = options[:age]
 
-    UI.message('name: #{name} age: #{age}')
+    UI.message('🚀name: #{name} age: #{age}')
 
   end
 
