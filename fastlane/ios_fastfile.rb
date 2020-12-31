@@ -42,11 +42,10 @@ platform :ios do
 		path: "#{libName}.podspec",
 		allow_warnings: true,
 		use_libraries: true,
-    	no_clean: true,
     	verbose: false,
 		)
 
-    UI.message("👉 #{libName}代码库更新成功🚀")
+    UI.message("👉 #{libName}代码库更新成功！！！🚀🧨")
 
   end
 
