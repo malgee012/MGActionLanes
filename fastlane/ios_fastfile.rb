@@ -43,7 +43,7 @@ platform :ios do
 		allow_warnings: true,
 		use_libraries: true,
     	verbose: false,
-    	sources:["https://cdn.cocoapods.org/", "https://github.com/cocoapods/specs.git"]
+    	sources:["https://github.com/cocoapods/specs.git", "https://cdn.cocoapods.org/"]
 		)
 
 # https://github.com/cocoapods/specs.git
