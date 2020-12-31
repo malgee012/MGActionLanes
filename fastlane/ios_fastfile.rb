@@ -43,6 +43,7 @@ platform :ios do
 		allow_warnings: true,
 		use_libraries: true,
     	verbose: false,
+    	sources:['https://github.com/CocoaPods/Specs.git']
 		)
 
     UI.message("👉 #{libName}代码库更新成功！！！🚀🧨")
