@@ -30,7 +30,7 @@ platform :ios do
 	# 判断是否已经存在了这个tag, 如果存在先移除
     if git_tag_exists(tag: tag) 
     	UI.message("👉 #{libName}代码库已经存在#{tag}标签, 删除#{tag}标签🏷")
-    	remove_tag(tag:tag)
+    	remove_git_tag(tag:tag)
     end
 
     add_git_tag(tag:tag)
