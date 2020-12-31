@@ -14,11 +14,11 @@ platform :ios do
 	message = options[:message]
   	tag = options[:tag]
 
-    UI.message("👉 代码库名字： #{libName}  tag版本：#{tag}  提交信息说明: #{message}")
+    UI.message("👉 代码库名字： #{libName}  tag版本：#{tag}  提交信息: #{message}")
 
     # 验证podspec
     pod_lib_lint(
-    	allow_waring: true,
+    	allow_warnings: true,
     	use_libraries: true,
     	no_clean: true,
     	verbose: false,
@@ -40,7 +40,7 @@ platform :ios do
 
 	pod_push(
 		path: "#{libName}.podspec",
-		allow_warings: true,
+		allow_warnings: true,
 		use_libraries: true,
     	no_clean: true,
     	verbose: false,
