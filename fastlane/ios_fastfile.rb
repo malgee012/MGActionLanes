@@ -1,4 +1,5 @@
 
+# 这是远端的lane
 
 # default_platform :ios 这两种都可以
 default_platform(:ios)
@@ -6,13 +7,14 @@ default_platform(:ios)
 # 执行的开始位置， 相当于main
 platform :ios do
 
-  desc "远端的lane"
-  lane :MG_lane do |options|
+  desc "版本库的发布&更新"
+  lane :mg_update_lib do |options|
 
-    name = options[:name]
-    age = options[:age]
+	libName = options[:libName]
+	message = options[:message]
+  	tag = options[:tag]
 
-    UI.message("🚀name: #{name} age: #{age}")
+    UI.message("🚀代码库名字： #{libName} 提交信息说明: #{message} tag版本说明：#{tag}")
 
   end
 
