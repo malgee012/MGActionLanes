@@ -14,7 +14,7 @@ platform :ios do
 	message = options[:message]
   	tag = options[:tag]
 
-    UI.message("🚀代码库名字： #{libName} 提交信息说明: #{message} tag版本说明：#{tag}")
+    UI.message("🇨🇳 👉 代码库名字： #{libName} 提交信息说明: #{message} tag版本说明：#{tag}")
 
   end
 
