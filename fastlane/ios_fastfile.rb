@@ -43,10 +43,9 @@ platform :ios do
 		allow_warnings: true,
 		use_libraries: true,
     	verbose: false,
-    	sources:["https://github.com/cocoapods/specs.git", "https://cdn.cocoapods.org/"]
+    	# sources:["https://github.com/cocoapods/specs.git", "https://cdn.cocoapods.org/"]
 		)
 
-# https://github.com/cocoapods/specs.git
     UI.message("👉 #{libName}代码库更新成功！！！🚀🧨")
 
   end
