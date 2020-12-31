@@ -46,7 +46,7 @@ platform :ios do
     	# sources:["https://github.com/cocoapods/specs.git", "https://cdn.cocoapods.org/"]
 		)
 
-    UI.message("👉 #{libName}代码库更新成功！！！🚀🧨")
+    UI.message("👉 #{libName}代码库更新成功！！！🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀")
 
   end
 
