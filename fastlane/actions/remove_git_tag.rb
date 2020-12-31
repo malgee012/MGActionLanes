@@ -10,12 +10,14 @@ module Fastlane
 
         # 获取tag值
         tagName = params[:tag]
-        # 执行删除 tag 
+        
+        # 执行删除本地标签
         Action.sh "git tag -d #{tagName}"
 
-        # sh "shellcommand ./path"
+        # 执行删除远端的标签  【git push origin :refs/tags/1.0.0】
+        Action.sh "git push origin :#{tagName}"        
 
-        # Actions.lane_context[SharedValues::REMOVE_GIT_TAG_CUSTOM_VALUE] = "my_val"
+
       end
 
       #####################################################

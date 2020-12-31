@@ -29,14 +29,14 @@ platform :ios do
 
 	# 判断是否已经存在了这个tag, 如果存在先移除
     if git_tag_exists(tag: tag) 
-    	UI.message("👉 #{libName}代码库已经存在#{tag}标签, 删除#{tag}标签🏷")
     	remove_git_tag(tag:tag)
+    	UI.message("👉 #{libName}代码库已经存在#{tag}标签, 现在删除#{tag}标签🏷")
     end
 
     add_git_tag(tag:tag)
 	UI.message("👉 已经为#{libName}代码库添加新的#{tag}标签🏷")
 	push_git_tags
-
+	UI.message("👉 #{tag}标签现在已经推送到远端了")
 
 	pod_push(
 		path: "#{libName}.podspec",
