@@ -19,24 +19,16 @@ module Fastlane
         # 命令git push origin :refs/tags/<tagname> //删除一个远程标签 (推送空tag至远程进行删除)
         # 命令git push origin :<tagname>  //删除一个远程标签
         Action.sh "git push origin :refs/tags/#{tagName}"    
-        
-        UI.message("👉 执行完这里了，开心😊")
-
 
         # 删除cocoapods的标签
         is_public = params[:is_public]
-        libName = params[:libName]
-
-        UI.message("👉 ========#{is_public}===#{libName}========")        
-
         if is_public 
         
-        UI.message("👉 开始执行，===================")
+          libName = params[:libName]
+          UI.error "Unable to accept duplicate entry for:#{libName} (#{tagName}), 请重新添加一个新的tag"
 
-        Action.sh "pod trunk delete #{libName} #{tagName}"    
-
-        UI.message("👉 结束执行，=-------------------")
-
+        #删除一个POD的特定版本来
+        # Action.sh "pod trunk delete #{libName} #{tagName}"    
         end
 
 
