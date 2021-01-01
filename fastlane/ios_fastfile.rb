@@ -18,7 +18,7 @@ platform :ios do
     # is_public = "true" == public_str
 
 
-    UI.message(">>>>>  #{public_str}   #{is_public}   #{"false".eql?(is_public)}   #{"false" == is_public} ")
+    UI.message(">>>>>   #{is_public}   #{"false".eql?(is_public)}   #{"false" == is_public} ")
 
     UI.message("👉 代码库名字: #{libName}, tag版本: #{tag}, 提交信息: #{message}, public:#{is_public} ")
 
