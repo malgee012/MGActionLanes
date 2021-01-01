@@ -14,8 +14,15 @@ module Fastlane
         # 执行删除本地标签
         Action.sh "git tag -d #{tagName}"
 
-        # 执行删除远端的标签  【git push origin :refs/tags/1.0.0】
-        Action.sh "git push origin :refs/tags/#{tagName}"        
+        # 执行删除远端(github)的标签  【git push origin :refs/tags/1.0.0】
+        Action.sh "git push origin :refs/tags/#{tagName}"    
+
+
+        # 删除cocoapods的标签
+        Action.sh "pod trunk delete #{tagName}"    
+
+        # 命令git push origin --delete tag <tagname> //删除一个远程标签
+        # 命令git push origin :refs/tags/<tagname> //删除一个远程标签 (推送空tag至远程进行删除)
 
 
       end
