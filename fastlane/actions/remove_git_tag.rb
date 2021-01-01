@@ -68,7 +68,7 @@ module Fastlane
                                       ),
           FastlaneCore::ConfigItem.new(key: :is_public,
                                        env_name: "FL_REMOVE_GIT_PUBLIC_API_TOKEN", # ENV环境变量的名称, 可以通过ENV[FL_REMOVE_GIT_TAG_API_TOKEN]获取
-                                       description: "公有库判断", # a short description of this parameter
+                                       description: "是否为公有库", # a short description of this parameter
                                        optional: false,
                                        is_string: false,
                                       ),

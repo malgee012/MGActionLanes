@@ -13,14 +13,12 @@ platform :ios do
 	libName = options[:libName]
 	message = options[:message]
   	tag = options[:tag]
-
     is_public = options[:is_public]
     if !is_public
         is_public = false
     end
 
-
-    UI.message("👉 代码库名字: #{libName}, tag版本: #{tag}, 提交信息: #{message}, public:#{is_public} ")
+    UI.message("👉 代码库名字: #{libName}, tag版本: #{tag}, 提交信息: #{message}, public: #{is_public} ")
 
     # 验证podspec
     pod_lib_lint(
