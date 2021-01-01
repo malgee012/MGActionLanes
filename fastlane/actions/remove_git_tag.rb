@@ -15,7 +15,7 @@ module Fastlane
         Action.sh "git tag -d #{tagName}"
 
         # 执行删除远端的标签  【git push origin :refs/tags/1.0.0】
-        Action.sh "git push origin :#{tagName}"        
+        Action.sh "git push origin :refs/tags/#{tagName}"        
 
 
       end
