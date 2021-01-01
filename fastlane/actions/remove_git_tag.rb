@@ -22,9 +22,9 @@ module Fastlane
 
         # 删除cocoapods的标签
         is_public = params[:is_public]
+        libName = params[:libName]
         if is_public 
         
-          libName = params[:libName]
           UI.error "Unable to accept duplicate entry for:#{libName} (#{tagName}), 请重新添加一个新的tag"
 
         #删除一个POD的特定版本来
