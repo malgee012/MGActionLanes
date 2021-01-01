@@ -13,6 +13,7 @@ platform :ios do
 	libName = options[:libName]
 	message = options[:message]
   	tag = options[:tag]
+    is_public = options[:is_public]
 
     UI.message("👉 代码库名字： #{libName}  tag版本：#{tag}  提交信息: #{message}")
 
@@ -29,7 +30,7 @@ platform :ios do
 
 	# 判断是否已经存在了这个tag, 如果存在先移除
     if git_tag_exists(tag: tag) 
-    	remove_git_tag(tag:tag, libName:libName, is_public:false)
+    	remove_git_tag(tag:tag, libName:libName, is_public:str.eql?(is_public))
     	UI.message("👉 #{libName}代码库已经存在#{tag}标签, 现在删除#{tag}标签🏷")
     end
 
@@ -51,6 +52,6 @@ platform :ios do
 
   end
 
-  
+
 
 end
