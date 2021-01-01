@@ -25,8 +25,8 @@ module Fastlane
         libName = params[:libName]
         if is_public 
         
-          UI.error "❌❌❌❌❌❌❌❌❌❌ Unable to accept duplicate entry for:#{libName} (#{tagName}), "
-          UI.user_error!("❌❌❌❌❌❌❌❌❌❌ 请重新添加一个新的tag，现在立即退出！！！！")
+          UI.error "❌ERROR: Unable to accept duplicate entry for:#{libName} (#{tagName}), "
+          UI.user_error!("❌❌ cocoapods版本库存在#{tagName}标签了，请重新添加一个新的tag，现在立即退出！！！！❌❌")
         #删除一个POD的特定版本来
         # Action.sh "pod trunk delete #{libName} #{tagName}"    
         end
