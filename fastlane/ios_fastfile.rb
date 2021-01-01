@@ -14,8 +14,8 @@ platform :ios do
 	message = options[:message]
   	tag = options[:tag]
 
-    is_public= options[:is_public]
-    if is_public
+    is_public = options[:is_public]
+    if !is_public
         is_public = false
     end
 
