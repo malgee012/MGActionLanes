@@ -14,8 +14,8 @@ platform :ios do
 	message = options[:message]
   	tag = options[:tag]
 
-    public_str = options[:is_public]
-    is_public = "true" == public_str
+    is_public= options[:is_public]
+    # is_public = "true" == public_str
 
 
     UI.message(">>>>>  #{public_str}   #{is_public}   #{"false".eql?(is_public)}   #{"false" == is_public} ")
