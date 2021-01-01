@@ -7,7 +7,7 @@ default_platform(:ios)
 # 执行的开始位置， 相当于main
 platform :ios do
 
-  desc "版本库的发布&更新"
+  desc "私有版本库的发布&更新"
   lane :mg_update_lib do |options|
 
 	libName = options[:libName]
@@ -29,7 +29,7 @@ platform :ios do
 
 	# 判断是否已经存在了这个tag, 如果存在先移除
     if git_tag_exists(tag: tag) 
-    	remove_git_tag(tag:tag, libName:libName, is_public:true)
+    	remove_git_tag(tag:tag, libName:libName, is_public:false)
     	UI.message("👉 #{libName}代码库已经存在#{tag}标签, 现在删除#{tag}标签🏷")
     end
 
@@ -51,5 +51,6 @@ platform :ios do
 
   end
 
+  
 
 end
