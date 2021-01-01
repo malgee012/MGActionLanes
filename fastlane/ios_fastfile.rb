@@ -13,9 +13,10 @@ platform :ios do
 	libName = options[:libName]
 	message = options[:message]
   	tag = options[:tag]
+
     is_public = options[:is_public]
 
-    UI.message(">>>>>  #{is_public}   #{str.eql?(is_public)}")
+    UI.message(">>>>>  #{is_public}   #{"false".eql?(is_public)}")
 
     UI.message("👉 代码库名字： #{libName}  tag版本：#{tag}  提交信息: #{message}")
 
