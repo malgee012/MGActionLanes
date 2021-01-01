@@ -23,6 +23,9 @@ module Fastlane
         # 删除cocoapods的标签
         is_public = params[:is_public]
         libName = params[:libName]
+
+        UI.message(">>>>>>>>>>>>> #{is_public}")
+
         if is_public 
         
           UI.error "❌ ERROR: Unable to accept duplicate entry for:#{libName} (#{tagName}), "
