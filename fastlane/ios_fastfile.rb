@@ -7,7 +7,7 @@ default_platform(:ios)
 # 执行的开始位置， 相当于main
 platform :ios do
 
-  desc "私有版本库的发布&更新"
+  desc "版本库的发布&更新"
   lane :mg_update_lib do |options|
 
 	libName = options[:libName]
@@ -43,13 +43,26 @@ platform :ios do
 	push_git_tags  # git push origin --tags  这是推送全部未推送过的本地标签
 	UI.message("👉 #{tag}标签现在已经推送到远端了")
 
-	pod_push(
-		path: "#{libName}.podspec",
-		allow_warnings: true,
-		use_libraries: true,
-    	verbose: false,
-    	# sources:["https://github.com/cocoapods/specs.git", "https://cdn.cocoapods.org/"]
-		)
+
+    if is_public
+        pod_push(
+            path: "#{libName}.podspec",
+            allow_warnings: true,
+            use_libraries: true,
+            verbose: false,
+            # sources:["https://github.com/cocoapods/specs.git", "https://cdn.cocoapods.org/"]
+        )
+    else
+        pod_push(
+            path: "#{libName}.podspec",
+            allow_warnings: true,
+            use_libraries: true,
+            verbose: false,
+            sources:["https://github.com/cocoapods/MGSpecs.git", "https://cdn.cocoapods.org/"],
+            repo: "MGSpecs",
+        )
+    end
+
 
     UI.message("👉 #{libName}代码库更新成功！！！🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀")
 
