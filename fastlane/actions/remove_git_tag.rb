@@ -15,18 +15,30 @@ module Fastlane
         Action.sh "git tag -d #{tagName}"
 
         # 执行删除远端(github)的标签  【git push origin :refs/tags/1.0.0】
+        # 命令git push origin --delete tag <tagname> //删除一个远程标签
+        # 命令git push origin :refs/tags/<tagname> //删除一个远程标签 (推送空tag至远程进行删除)
+        # 命令git push origin :<tagname>  //删除一个远程标签
         Action.sh "git push origin :refs/tags/#{tagName}"    
+        
+        UI.message("👉 执行完这里了，开心😊")
 
 
         # 删除cocoapods的标签
         is_public = params[:is_public]
-        if is_public 
         libName = params[:libName]
+
+        UI.message("👉 ========#{is_public}===#{libName}========")        
+
+        if is_public 
+        
+        UI.message("👉 开始执行，===================")
+
         Action.sh "pod trunk delete #{libName} #{tagName}"    
+
+        UI.message("👉 结束执行，=-------------------")
+
         end
-        # 命令git push origin --delete tag <tagname> //删除一个远程标签
-        # 命令git push origin :refs/tags/<tagname> //删除一个远程标签 (推送空tag至远程进行删除)
-        # 命令git push origin :<tagname>  //删除一个远程标签
+
 
       end
 
