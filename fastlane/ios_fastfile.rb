@@ -15,6 +15,8 @@ platform :ios do
   	tag = options[:tag]
     is_public = options[:is_public]
 
+    UI.message(">>>>>  #{is_public}")
+
     UI.message("👉 代码库名字： #{libName}  tag版本：#{tag}  提交信息: #{message}")
 
     # 验证podspec
