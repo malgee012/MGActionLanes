@@ -19,11 +19,14 @@ module Fastlane
 
 
         # 删除cocoapods的标签
-        Action.sh "pod trunk delete #{tagName}"    
-
+        is_public = params[:is_public]
+        if is_public 
+        libName = params[:libName]
+        Action.sh "pod trunk delete #{libName} #{tagName}"    
+        end
         # 命令git push origin --delete tag <tagname> //删除一个远程标签
         # 命令git push origin :refs/tags/<tagname> //删除一个远程标签 (推送空tag至远程进行删除)
-
+        # 命令git push origin :<tagname>  //删除一个远程标签
 
       end
 
@@ -46,9 +49,19 @@ module Fastlane
 
         # Below a few examples
         [
+          FastlaneCore::ConfigItem.new(key: :libName,
+                                       env_name: "FL_REMOVE_GIT_LIBNAME_API_TOKEN", # ENV环境变量的名称, 可以通过ENV[FL_REMOVE_GIT_TAG_API_TOKEN]获取
+                                       description: "要删除的lib名字", # a short description of this parameter
+                                       optional: false,
+                                      is_string: true),
           FastlaneCore::ConfigItem.new(key: :tag,
                                        env_name: "FL_REMOVE_GIT_TAG_API_TOKEN", # ENV环境变量的名称, 可以通过ENV[FL_REMOVE_GIT_TAG_API_TOKEN]获取
                                        description: "要删除的tag值", # a short description of this parameter
+                                       optional: false,
+                                      is_string: true),
+          FastlaneCore::ConfigItem.new(key: :is_public,
+                                       env_name: "FL_REMOVE_GIT_PUBLIC_API_TOKEN", # ENV环境变量的名称, 可以通过ENV[FL_REMOVE_GIT_TAG_API_TOKEN]获取
+                                       description: "公有库判断", # a short description of this parameter
                                        optional: false,
                                       is_string: true),
         ]

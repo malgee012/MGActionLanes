@@ -29,13 +29,14 @@ platform :ios do
 
 	# 判断是否已经存在了这个tag, 如果存在先移除
     if git_tag_exists(tag: tag) 
-    	remove_git_tag(tag:tag)
+    	remove_git_tag(tag:tag, libName:libName, is_public:true)
     	UI.message("👉 #{libName}代码库已经存在#{tag}标签, 现在删除#{tag}标签🏷")
     end
 
-    add_git_tag(tag:tag)
+    add_git_tag(tag:tag)  
 	UI.message("👉 已经为#{libName}代码库添加新的#{tag}标签🏷")
-	push_git_tags
+
+	push_git_tags  # git push origin --tags  这是推送全部未推送过的本地标签
 	UI.message("👉 #{tag}标签现在已经推送到远端了")
 
 	pod_push(
