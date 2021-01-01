@@ -65,17 +65,20 @@ module Fastlane
                                        env_name: "FL_REMOVE_GIT_LIBNAME_API_TOKEN", # ENV环境变量的名称, 可以通过ENV[FL_REMOVE_GIT_TAG_API_TOKEN]获取
                                        description: "要删除的lib名字", # a short description of this parameter
                                        optional: false,
-                                      is_string: true),
+                                       type: String
+                                       ),
           FastlaneCore::ConfigItem.new(key: :tag,
                                        env_name: "FL_REMOVE_GIT_TAG_API_TOKEN", # ENV环境变量的名称, 可以通过ENV[FL_REMOVE_GIT_TAG_API_TOKEN]获取
                                        description: "要删除的tag值", # a short description of this parameter
                                        optional: false,
-                                      is_string: true),
+                                       type: String
+                                      ),
           FastlaneCore::ConfigItem.new(key: :is_public,
                                        env_name: "FL_REMOVE_GIT_PUBLIC_API_TOKEN", # ENV环境变量的名称, 可以通过ENV[FL_REMOVE_GIT_TAG_API_TOKEN]获取
                                        description: "公有库判断", # a short description of this parameter
                                        optional: false,
-                                      is_string: true),
+                                       is_string: false,
+                                      ),
         ]
       end
 
