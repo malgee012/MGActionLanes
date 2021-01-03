@@ -9,7 +9,7 @@ module Fastlane
       SEND_MAIL_CUSTOM_VALUE = :SEND_MAIL_CUSTOM_VALUE
     end
 
-    class SendEmailAction < Action
+    class MgSendEmailAction < Action
 
        def self.send_emails(stmpserver_address,sender_address,password,recipients,subject,message_body)
 
