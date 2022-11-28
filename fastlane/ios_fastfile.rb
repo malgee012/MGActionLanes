@@ -25,7 +25,7 @@ platform :ios do
     	allow_warnings: true,
     	use_libraries: true,
     	no_clean: true,
-    	verbose: false,
+    	verbose: true,
     	)
     git_add(path: ".")
     git_commit(path: ".", message: "#{message}")
@@ -49,7 +49,7 @@ platform :ios do
             path: "#{libName}.podspec",
             allow_warnings: true,
             use_libraries: true,
-            verbose: false,
+            verbose: true,
             # sources:["https://github.com/cocoapods/specs.git", "https://cdn.cocoapods.org/"]
         )
     else
@@ -57,7 +57,7 @@ platform :ios do
             path: "#{libName}.podspec",
             allow_warnings: true,
             use_libraries: true,
-            verbose: false,
+            verbose: true,
             sources:["https://github.com/cocoapods/MGSpecs.git", "https://cdn.cocoapods.org/"],
             repo: "MGSpecs",
         )
